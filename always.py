@@ -11,12 +11,14 @@ from time import time
 from bge import logic as gl
 from blendergetobject import get_all_objects
 
+
+RETARD = 0.01666
+
+
 def main():
     gl.tempo.update()
     all_obj = get_all_objects()
     
-    print(gl.phase)
-
     if gl.phase == 'jeu':
         jeu(all_obj)
 
@@ -25,22 +27,22 @@ def main():
         
 def jeu(all_obj):
     # Départ décalé de la 2ème bille
-    print(time() - gl.temps, gl.retard)
     if time() - gl.temps > gl.retard and not gl.bille_001_dynamic:
-        print('Envoi 2ème bille')
         restore_bille_001_dynamics(all_obj)
         gl.bille_001_dynamic = 1
 
     dist = get_distance_entre_bille(all_obj)
     gl.touch = collision(dist)
-    if gl.touch:
+
+    # Temps écoulé depuis lancement 1ère bille
+    t = time() - gl.temps
+    all_obj['Text.001']['Text'] = str(round(t, 3))
+    
+    if gl.touch or t > 40:
         gl.phase = 'fin'
         gl.result = time() - gl.temps
         gl.touch = 0
         gl.tempo['fin'].reset()
-
-    if time() - gl.temps > 40:
-        gl.phase = 'fin'
     
 def fin(all_obj):
         
@@ -48,12 +50,28 @@ def fin(all_obj):
     display_time(all_obj)
 
     if gl.tempo['fin'].tempo == 120:
-        gl.retard += 0.001
+        rd = str(round(gl.retard, 3))
+        rt = str(round(gl.result, 3))
+        data = 'Retard: ' + rd +' --> Résultat: ' + rt + '\n'
+        write(data)
+        gl.retard += RETARD
         gl.phase = 'jeu'
         gl.result = ''
         gl.temps = time()
         gl.bille_001_dynamic = 0
         restore_bille_dynamics(all_obj)
+
+def write(data):
+    fichier = gl.current_dir + '/result.txt'
+    write_data_in_file(data, fichier)
+    print(data)
+
+def write_data_in_file(data, fichier):
+    """Ecrit des data de type string dans le fichier, écrase l'existant."""
+
+    with open(fichier, 'a') as fd:
+        fd.write(data)
+    fd.close()
         
 def set_ball_origin(all_obj):
     # Fixe
