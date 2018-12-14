@@ -39,6 +39,9 @@ def jeu(all_obj):
         gl.touch = 0
         gl.tempo['fin'].reset()
 
+    if time() - gl.temps > 40:
+        gl.phase = 'fin'
+    
 def fin(all_obj):
         
     set_ball_origin(all_obj)
@@ -80,7 +83,7 @@ def get_distance_entre_bille(all_obj):
     return dist
 
 def collision(dist):
-    if dist <= 0.119:
+    if dist <= 0.122:
         touch = 1
     else:
         touch = 0
