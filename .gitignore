@@ -1,3 +1,34 @@
+
+# Geany
+*.geany
+
+# divers
+old/
+
+# Python test
+*_old.py
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyc
+
+# install directory
+build/
+
+# GitEye
+target/
+/.project
+*.project
+
+# Blender
+*.blend1
+*.blend2
+*.blend3
+*.blend4
+*.blend5
+*.blend6
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
