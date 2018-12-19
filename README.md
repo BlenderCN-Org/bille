@@ -1,6 +1,8 @@
 # Jeu de billes
 Pour tous les enfants.
 
+![billes](bille.png)
+
 ### Installation
 ~~~text
 sudo apt-get install blender
