@@ -21,7 +21,7 @@ def variable():
     gl.cycle = -1
     
     # retard en frames de la 2ème balle
-    gl.retard = 15  #-1
+    gl.retard = -1
     # en secondes
     gl.retard_temps = 0
 
