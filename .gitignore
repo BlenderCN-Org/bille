@@ -4,6 +4,7 @@
 
 # divers
 old/
+publishing/
 
 # Python test
 *_old.py
