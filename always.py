@@ -14,7 +14,7 @@ from blendergetobject import get_all_objects
 
 def start(all_obj):
     print('Start ....\n')
-    gl.phase ='début du jeu'
+    gl.phase='début du jeu'
     
 def debut_jeu(all_obj):
     print('Début du jeu')
@@ -30,7 +30,7 @@ def jeu_avant_retard(all_obj):
     display_time(all_obj)
     # Jeu avant lancement de la 2ème bille
     if gl.retard == gl.tempo['always'].tempo:
-        gl.phase ='retard'
+        gl.phase='retard'
         #gl.retard_temps = time() - gl.temps
         gl.retard_temps = gl.retard * 0.016666
         
@@ -38,41 +38,41 @@ def retard(all_obj):
     print('Lancement de la 2ème bille')
     display_time(all_obj)
     restore_bille_001_dynamics(all_obj)
-    gl.phase ='jeu après retard'
+    gl.phase='jeu après retard'
     
 def jeu_apres_retard(all_obj):
     display_time(all_obj)
 
     # Limitation du temps à 40 secondes
     if time() - gl.temps > 40:
-        gl.phase ='fin de jeu'
+        gl.phase='fin de jeu'
     
     # Jeu après lancement de la 2ème bille
     coll = collision(all_obj)
     if coll:
-        gl.phase ='fin de jeu'
+        gl.phase='fin de jeu'
     
 def fin_jeu(all_obj):
     print('Collision')
     gl.result = time() - gl.temps
-    gl.phase ='début de fin'
+    gl.phase='début de fin'
     
 def debut_fin(all_obj):
     print('Début de fin')
     set_ball_origin(all_obj)
     gl.tempo['fin'].reset()
-    gl.phase ='fin'
+    gl.phase='fin'
     
 def fin(all_obj):
     #print('Affichage du score')
     display_result(all_obj)
     if gl.tempo['fin'].tempo > 240:
         print("Fin de l'affichage")
-        gl.phase ='fin de fin'
+        gl.phase='fin de fin'
         
 def fin_de_fin(all_obj):
     write()
-    gl.phase ='début du jeu'
+    gl.phase='début du jeu'
 
 
 STATES = {  'P': start,

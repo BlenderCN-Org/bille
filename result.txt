@@ -932,3 +932,34 @@ Retard: 0.4 --> Résultat: 40.007
 Retard: 0.417 --> Résultat: 21.977
 Retard: 0.433 --> Résultat: 33.715
 Retard: 0.45 --> Résultat: 40.007
+
+Date: 18 12 19 à 19:30:28
+Retard: 0.0 --> Résultat: 0.8
+Retard: 0.017 --> Résultat: 0.805
+Retard: 0.033 --> Résultat: 0.802
+Retard: 0.05 --> Résultat: 0.819
+Retard: 0.067 --> Résultat: 0.803
+Retard: 0.083 --> Résultat: 0.817
+Retard: 0.1 --> Résultat: 0.818
+Retard: 0.117 --> Résultat: 0.834
+Retard: 0.133 --> Résultat: 0.836
+Retard: 0.15 --> Résultat: 0.834
+Retard: 0.167 --> Résultat: 2.438
+Retard: 0.183 --> Résultat: 2.455
+Retard: 0.2 --> Résultat: 4.11
+Retard: 0.217 --> Résultat: 4.112
+
+Date: 18 12 21 à 20:07:49
+
+Date: 18 12 21 à 20:08:19
+
+Date: 18 12 21 à 20:08:27
+
+Date: 18 12 21 à 20:08:43
+
+Date: 18 12 21 à 20:09:48
+Retard: 0.0 --> Résultat: 0.794
+Retard: 0.017 --> Résultat: 0.817
+Retard: 0.033 --> Résultat: 0.817
+
+Date: 18 12 21 à 20:12:09
