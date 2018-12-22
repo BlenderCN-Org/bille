@@ -23,7 +23,7 @@ def debut_jeu(all_obj):
     gl.result = 0
     gl.temps = time()
     gl.retard += 1
-    gl.phase ="jeu avant retard"
+    gl.phase="jeu avant retard"
     print('Retard de', gl.retard, 'frames')
     
 def jeu_avant_retard(all_obj):
